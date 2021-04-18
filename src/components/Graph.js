@@ -95,6 +95,18 @@ function Graph(props) {
 
     }, [])
 
+    useEffect (() => {
+        if (props.player) {
+            d3.select(d3Container.current).selectAll("circle")
+                .style("fill", "#69b3a2")
+                .attr("r", 5)
+            d3.select(d3Container.current).select("#" + props.player)
+                .style("fill", "#FF0000")
+                .attr("r", 8)
+        }
+        
+    }, [props.player])
+
     return (
         
       <div className="graph" ref={d3Container}>
