@@ -21,3 +21,32 @@
 ol {
   list-style: square;
 }
+
+div.tooltip {	
+  position: absolute;			
+  text-align: center;			
+  width: fit-content;					
+  height: fit-content;					
+  padding: 2px;				
+  font: 12px sans-serif;		
+  background: lightsteelblue;	
+  border: 0px;		
+  border-radius: 8px;			
+  pointer-events: none;			
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.playerImage {
+  width: 92px;
+  height: auto;
+}
+
+.dropdownMenu {
+  margin-bottom: 50px;
+}

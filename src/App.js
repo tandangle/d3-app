@@ -1,6 +1,7 @@
 import { useState, useEffect, setState } from "react";
 import Graph from "./components/Graph";
 import DropdownMenu from "./components/DropdownMenu"
+import PlayerInfo from "./components/PlayerInfo"
 import { PlayerContext } from "./components/PlayerContext"
 import './App.css';
 import nba_salaries from "./json/nba_salaries"
@@ -9,7 +10,7 @@ import nba_stats from "./json/nba_stats"
 
 function App() {
 
-  const [player, setPlayer] = useState("test")
+  const [player, setPlayer] = useState("")
 
   
   const togglePlayer = (e) => {
@@ -45,7 +46,9 @@ function App() {
         
         </div>
       </div>
-      <Graph salaries={nba_salaries} stats={nba_stats} player={player} />
+      <Graph salaries={nba_salaries} stats={nba_stats} player={player} togglePlayer={togglePlayer}/>
+
+      <PlayerInfo player={player} salaries={nba_salaries} stats={nba_stats} />
       
       <DropdownMenu players={nba_salaries}/>
     </PlayerContext.Provider>
