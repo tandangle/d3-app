@@ -17,10 +17,6 @@ function App() {
     setPlayer(e)
   }
 
-  useEffect(() => {
-    console.log(player)
-  }, [player])
-
   return (
     <PlayerContext.Provider value={{player: player, togglePlayer: togglePlayer}}>
 
