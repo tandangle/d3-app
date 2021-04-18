@@ -16,7 +16,7 @@ function DropdownMenu(props) {
             <select onChange={changePlayer} className="dropdownMenu">
                 {props.players.map(p => (
                 <option
-                value={p.Player}
+                value={p.Player_Code}
                 key={p.Player_Code}
                 >{p.Player}</option>
                 ))}
