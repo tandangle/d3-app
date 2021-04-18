@@ -46,7 +46,7 @@ function App() {
 
       <PlayerInfo player={player} salaries={nba_salaries} stats={nba_stats} />
       
-      <DropdownMenu players={nba_salaries}/>
+      <DropdownMenu players={nba_salaries} player={player}/>
     </PlayerContext.Provider>
   );
 }
