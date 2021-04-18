@@ -1,0 +1,23 @@
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.graph {
+  padding-bottom: 50px;
+}
+
+.bpm {
+  margin-top: 20px;
+  width: 60%;
+}
+
+.bpm > div {
+  margin-bottom: 10px;
+}
+
+ol {
+  list-style: square;
+}
