@@ -15,7 +15,7 @@ function PlayerInfo(props) {
                         Team: {props.teams[props.salaries.find(e => e.Player_Code === props.player)?.Tm]}
                     </div>
                     <div className="playerDraft">
-                        Draft Class of {props.draft.find(e => e.Player_Code === props.player)?.Year} - Round {props.draft.find(e => e.Player_Code === props.player)?.Rd}, Pick {props.draft.find(e => e.Player_Code === props.player)?.Pk}
+                    {props.draft.find(e => e.Player_Code === props.player) ? "Draft Class of " + props.draft.find(e => e.Player_Code === props.player)?.Year + " - Round " + props.draft.find(e => e.Player_Code === props.player)?.Rd+ ", Pick " + props.draft.find(e => e.Player_Code === props.player)?.Pk + " by the " + props.teams[props.draft.find(e => e.Player_Code === props.player)?.Tm] : "Undrafted" }
                     </div>
                 </div>
                 <div className="playerStats">
