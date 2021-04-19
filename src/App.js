@@ -40,6 +40,8 @@ function App() {
           <li>-2.0 is a bench player (this is also defined as "replacement level")</li>
           <li>Below -2.0 are many end-of-bench players</li>
         </ol>
+
+        Click on any data point on the graph, or select a player from the dropdown menu to get started!
         
         </div>
       </div>
