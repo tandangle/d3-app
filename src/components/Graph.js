@@ -60,6 +60,7 @@ function Graph(props) {
                 .enter()
                 .append("svg:image")
                     .attr("id", function (d) { return d.Player_Code })
+                    .datum(function(d) {return d})
                     .attr("y", function (d) { return y(d.BPM)})
                     .attr("xlink:href", function(d) { return "https://d2p3bygnnzw9w3.cloudfront.net/req/202104151/tlogo/bbr/" + d.Tm + ".png"})
                     .attr("width", function(d) { return 25 + "px"})
@@ -85,7 +86,12 @@ function Graph(props) {
                         .attr("x", function(d, i, element) {
                             return x(props.salaries.find(e => e.Player_Code === element[i].__data__.Player_Code).current_salary)
                         })
-                })
+                    })
+                    .each(function(d) {
+                        if(d3.select(this).datum().BPM <= 0 || d3.select(this).attr("x") == 0 ) {
+                            d3.select(this).remove()
+                        }
+                    })
 
                 
 
