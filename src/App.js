@@ -5,7 +5,7 @@ import PlayerInfo from "./components/PlayerInfo"
 import { PlayerContext } from "./components/PlayerContext"
 import './App.css';
 import nba_salaries from "./json/nba_salaries"
-import nba_standings from "./json/nba_standings"
+import nba_draft from "./json/nba_draft"
 import nba_stats from "./json/nba_stats"
 import nba_teams from "./json/nba_teams"
 
@@ -43,9 +43,11 @@ function App() {
         
         </div>
       </div>
+      <div className="graphContainer">
+      <PlayerInfo player={player} salaries={nba_salaries} stats={nba_stats} teams={nba_teams} draft={nba_draft}/>
       <Graph salaries={nba_salaries} stats={nba_stats} player={player} togglePlayer={togglePlayer}/>
+      </div>
 
-      <PlayerInfo player={player} salaries={nba_salaries} stats={nba_stats} teams={nba_teams}/>
       
       <DropdownMenu players={nba_salaries} player={player}/>
     </PlayerContext.Provider>

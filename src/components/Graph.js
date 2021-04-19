@@ -9,7 +9,7 @@ function Graph(props) {
 
     var margin = { top: 10, right: 30, bottom: 30, left: 60},
     width =  1000 - margin.left - margin.right,
-    height = 800 - margin.top - margin.bottom;
+    height = 1000 - margin.top - margin.bottom;
 
     useEffect( () => {
        if (props.salaries && props.stats) {
@@ -26,33 +26,12 @@ function Graph(props) {
             var x = d3.scaleLinear()
                 .domain([0, 50000000])
                 .range([ 0, width ])
-            svg.append("g")
-                .attr("transform", "translate(0," + height + ")")
-                .call(d3.axisBottom(x).tickFormat((d) => {
-                    return d/1000000 + " Million"
-                }));
-            svg.append("text")
-                .attr("text-anchor", "center")
-                .attr("x", width/2)
-                .attr("y", height + 30)
-                .text("Salary in Millions");
+           
 
             var y = d3.scaleLinear()
-                .domain([0, 15])
+                .domain([-12, 12])
                 .range([ height, 0])
-            svg.append("g")
-                .call(d3.axisLeft(y).ticks(40));
-
-            svg.append("text")
-                .attr("text-anchor", "center")
-                .attr("transform", "rotate(-90)")
-                .attr("y", -margin.left+20)
-                .attr("x", -(height/2))
-                .text("Box Plus/Minus")
-
-            var toolTip = d3.select(".graph").append("div")	
-                .attr("class", "tooltip")				
-                .style("opacity", 0)
+            
                 
             svg.append('g')
                 .selectAll("dot")
@@ -63,8 +42,8 @@ function Graph(props) {
                     .datum(function(d) {return d})
                     .attr("y", function (d) { return y(d.BPM)})
                     .attr("xlink:href", function(d) { return "https://d2p3bygnnzw9w3.cloudfront.net/req/202104151/tlogo/bbr/" + d.Tm + ".png"})
-                    .attr("width", function(d) { return 25 + "px"})
-                    .attr("height", function(d) { return 25 + "px"})
+                    .attr("width", function(d) { return 30 + "px"})
+                    .attr("height", function(d) { return 30 + "px"})
                     .on("mouseover", function (e, d) {
                         toolTip.transition()
                         .duration(200)
@@ -88,14 +67,36 @@ function Graph(props) {
                         })
                     })
                     .each(function(d) {
-                        if(d3.select(this).datum().BPM <= 0 || d3.select(this).attr("x") == 0 ) {
+                        if(d3.select(this).attr("x") == 0 ) {
                             d3.select(this).remove()
                         }
                     })
 
-                
+            svg.append("g")
+            .attr("transform", "translate(0," + height/2 + ")")
+            .call(d3.axisBottom(x).tickFormat((d) => {
+                return d/1000000 + " Million"
+            }));
+            svg.append("text")
+                .attr("text-anchor", "center")
+                .attr("x", width/2)
+                .attr("y", height/2 + 40)
+                .text("Salary in Millions");
 
-            
+                svg.append("g")
+            .call(d3.axisLeft(y).ticks(40));
+
+            svg.append("text")
+                .attr("text-anchor", "center")
+                .attr("transform", "rotate(-90)")
+                .attr("y", -margin.left+20)
+                .attr("x", -(height/2 + 60))
+                .text("Box Plus/Minus")
+
+            var toolTip = d3.select(".graph").append("div")	
+                .attr("class", "tooltip")				
+                .style("opacity", 0)
+
        }
 
     }, [])
@@ -103,8 +104,8 @@ function Graph(props) {
     useEffect (() => {
         if (props.player) {
             d3.select(d3Container.current).selectAll("image")
-                .attr("width", function(d) { return 25 + "px"})
-                .attr("height", function(d) { return 25 + "px"})
+                .attr("width", function(d) { return 30 + "px"})
+                .attr("height", function(d) { return 30 + "px"})
                 .attr("class", null)
             d3.select(d3Container.current).select("#" + props.player)
                 .attr("width", function(d) { return 50 + "px"})

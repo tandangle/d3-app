@@ -11,7 +11,12 @@
 
 .bpm {
   margin-top: 20px;
-  width: 60%;
+  width: 75%;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #b2b2b2;
+  border-radius: 10px;
+  background-color: #f4e1d2;
 }
 
 .bpm > div {
@@ -23,7 +28,7 @@ ol {
 }
 
 image.active {
-  outline: thick solid red;
+  outline: thick solid #bc5a45;
 }
 
 div.tooltip {	
@@ -39,16 +44,37 @@ div.tooltip {
   pointer-events: none;			
 }
 
+.graphContainer {
+  width: 75%;
+  display: flex;
+  align-items: center;
+}
+
 .playerInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px 0px;
+  width: 30%;
 }
 
 .playerImage {
   width: 92px;
   height: auto;
+}
+
+.playerHeader, .playerStats {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #b2b2b2;
+  border-radius: 10px;
+  background-color: #f4e1d2;
+  min-width: 50%;
+}
+
+.playerLinks {
+  text-align: center;
 }
 
 .dropdownMenu {
