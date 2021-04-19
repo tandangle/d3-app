@@ -8,7 +8,10 @@ function PlayerInfo(props) {
             <div className="playerInfo">
                 <img className="playerImage" src={"https://www.basketball-reference.com/req/202104152/images/players/" + props.player + ".jpg"}/>
                 <div className="playerName">
-                    Player name: {props.salaries.find(e => e.Player_Code === props.player)?.Player}
+                    Player Name: {props.salaries.find(e => e.Player_Code === props.player)?.Player}
+                </div>
+                <div className="playerTeam">
+                    Team: {props.teams[props.salaries.find(e => e.Player_Code === props.player)?.Tm]}
                 </div>
                 <div className="playerBox">
                     Box Plus Minus: {props.stats.find(e => e.Player_Code === props.player)?.BPM ? props.stats.find(e => e.Player_Code === props.player)?.BPM : "No BPM stat found"}
