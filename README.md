@@ -5,3 +5,7 @@ https://www.basketball-reference.com/about/bpm2.html
 
 I put this application together to learn the fundamentals of D3.js and how it interacted within a React application, and used this as an opportunity to 
 visualize whether or not there is a correlation between spending more salary on a player versus their overall impact on their team's success.
+
+
+The app can be found hosted on Heroku here:
+https://d3-nba-app.herokuapp.com/
