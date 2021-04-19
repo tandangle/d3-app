@@ -7,6 +7,7 @@ import './App.css';
 import nba_salaries from "./json/nba_salaries"
 import nba_standings from "./json/nba_standings"
 import nba_stats from "./json/nba_stats"
+import nba_teams from "./json/nba_teams"
 
 function App() {
 
@@ -44,7 +45,7 @@ function App() {
       </div>
       <Graph salaries={nba_salaries} stats={nba_stats} player={player} togglePlayer={togglePlayer}/>
 
-      <PlayerInfo player={player} salaries={nba_salaries} stats={nba_stats} />
+      <PlayerInfo player={player} salaries={nba_salaries} stats={nba_stats} teams={nba_teams}/>
       
       <DropdownMenu players={nba_salaries} player={player}/>
     </PlayerContext.Provider>
