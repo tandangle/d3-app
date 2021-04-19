@@ -41,7 +41,9 @@ function App() {
           <li>Below -2.0 are many end-of-bench players</li>
         </ol>
 
-        Click on any data point on the graph, or select a player from the dropdown menu to get started!
+        This site was put together to visualize the currently active NBA players' BPM against their salary to analyze if there's any correlation between them.
+
+        Click on any data point on the graph or select a player from the dropdown menu to get started!
         
         </div>
       </div>
