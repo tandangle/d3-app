@@ -58,13 +58,13 @@ function Graph(props) {
                 .selectAll("dot")
                 .data(props.stats)
                 .enter()
-                .append("circle")
+                .append("svg:image")
                     .attr("id", function (d) { return d.Player_Code })
-                    .attr("cy", function (d) { return y(d.BPM)})
-                    .attr("r", 5)
-                    .style("fill", "#69b3a2")
+                    .attr("y", function (d) { return y(d.BPM)})
+                    .attr("xlink:href", function(d) { return "https://d2p3bygnnzw9w3.cloudfront.net/req/202104151/tlogo/bbr/" + d.Tm + ".png"})
+                    .attr("width", function(d) { return 25 + "px"})
+                    .attr("height", function(d) { return 25 + "px"})
                     .on("mouseover", function (e, d) {
-
                         toolTip.transition()
                         .duration(200)
                         .style("opacity", .9)
@@ -80,15 +80,14 @@ function Graph(props) {
                     .on("click", function(e) {
                         togglePlayer(e.target.getAttribute("id"))
                     })
+                    .each(function(d) {
+                        d3.select(this)
+                        .attr("x", function(d, i, element) {
+                            return x(props.salaries.find(e => e.Player_Code === element[i].__data__.Player_Code).current_salary)
+                        })
+                })
 
-
-            svg.selectAll("circle")
-                .each(function(d) {
-                    d3.select(this)
-                    .attr("cx", function(d, i, element) {
-                        return x(props.salaries.find(e => e.Player_Code === element[i].__data__.Player_Code).current_salary)
-                    })
-            })
+                
 
             
        }
@@ -97,12 +96,15 @@ function Graph(props) {
 
     useEffect (() => {
         if (props.player) {
-            d3.select(d3Container.current).selectAll("circle")
-                .style("fill", "#69b3a2")
-                .attr("r", 5)
+            d3.select(d3Container.current).selectAll("image")
+                .attr("width", function(d) { return 25 + "px"})
+                .attr("height", function(d) { return 25 + "px"})
+                .attr("class", null)
             d3.select(d3Container.current).select("#" + props.player)
-                .style("fill", "#FF0000")
-                .attr("r", 8)
+                .attr("width", function(d) { return 50 + "px"})
+                .attr("height", function(d) { return 50 + "px"})
+                .attr("class", "active")
+                
         }
         
     }, [props.player])
