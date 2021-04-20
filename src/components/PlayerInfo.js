@@ -1,12 +1,11 @@
-import React, {useRef, useEffect, useStat, useContext} from "react";
-import { PlayerContext } from "./PlayerContext";
+import React from "react";
 
 function PlayerInfo(props) {
 
     return (
         props.player ? 
             <div className="playerInfo">
-                <img className="playerImage" src={"https://www.basketball-reference.com/req/202104152/images/players/" + props.player + ".jpg"}/>
+                <img className="playerImage" alt={"Player portrait of " + props.salaries.find(e => e.Player_Code === props.player)?.Player } src={"https://www.basketball-reference.com/req/202104152/images/players/" + props.player + ".jpg"}/>
                 <div className="playerHeader">
                     <div className="playerName">
                         Player Name: {props.salaries.find(e => e.Player_Code === props.player)?.Player}
@@ -33,10 +32,10 @@ function PlayerInfo(props) {
                 </div>
                <div className="playerLinks">
                     <div className="playerLink">
-                        <a href={"https://www.basketball-reference.com/players/" + props.player.slice(0,1) + "/" + props.player + ".html"} target="_blank">Link to {props.salaries.find(e => e.Player_Code === props.player)?.Player}'s Basketball Reference page</a>
+                        <a href={"https://www.basketball-reference.com/players/" + props.player.slice(0,1) + "/" + props.player + ".html"} target="_blank" rel="noreferrer">Link to {props.salaries.find(e => e.Player_Code === props.player)?.Player}'s Basketball Reference page</a>
                     </div>
                     <div className="playerYoutube">
-                        <a href={"https://www.youtube.com/results?search_query=" + props.salaries.find(e => e.Player_Code === props.player)?.Player.split(" ")[0] + "+" + props.salaries.find(e => e.Player_Code === props.player)?.Player.split(" ")[1] + "+" + "highlights"} target="_blank">Link to {props.salaries.find(e => e.Player_Code === props.player)?.Player}'s Highlights on Youtube</a>
+                        <a href={"https://www.youtube.com/results?search_query=" + props.salaries.find(e => e.Player_Code === props.player)?.Player.split(" ")[0] + "+" + props.salaries.find(e => e.Player_Code === props.player)?.Player.split(" ")[1] + "highlights"} target="_blank" rel="noreferrer">Link to {props.salaries.find(e => e.Player_Code === props.player)?.Player}'s Highlights on Youtube</a>
                     </div>
                </div>
                

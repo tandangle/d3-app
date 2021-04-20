@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState, createContext} from "react";
+import React, {useRef, useEffect} from "react";
 import * as d3 from 'd3';
 
 function Graph(props) {
