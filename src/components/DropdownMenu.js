@@ -1,10 +1,9 @@
-import React, {useRef, useEffect, useStat, useContext} from "react";
+import React, {useContext} from "react";
 import { PlayerContext } from "./PlayerContext"
 
 function DropdownMenu(props) {
 
     const playerContextObject = useContext(PlayerContext);
-    console.log(playerContextObject)
 
     const changePlayer = (e) => {
         playerContextObject.togglePlayer(e.target.value)
@@ -12,7 +11,7 @@ function DropdownMenu(props) {
 
     return (
         <PlayerContext.Consumer>
-           {({player, togglePlayer}) => (
+           {() => (
             <select onChange={changePlayer} className="dropdownMenu">
                 {props.players.map(p => (
                 p.Player_Code === props.player ?                 
