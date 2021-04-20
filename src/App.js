@@ -20,7 +20,7 @@ function App() {
 
   return (
     <PlayerContext.Provider value={{player: player, togglePlayer: togglePlayer}}>
-      <div class="bpm">
+      <div className="bpm">
           <div>
           Box Plus/Minus, Version 2.0 (BPM) is a basketball box score-based metric that estimates a basketball player’s contribution to the team when that player is on the court. It is based only on the information in the traditional basketball box score--no play-by-play data or non-traditional box score data (like dunks or deflections) are included.
           </div>
