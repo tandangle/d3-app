@@ -1,7 +1,7 @@
 {
     "ATL": "Atlanta Hawks",
     "BOS": "Boston Celtics",
-    "BKN": "Brooklyn Nets",
+    "NJN": "Brooklyn Nets",
     "CHA": "Charlotte Hornets",
     "CHI": "Chicago Bulls",
     "CLE": "Cleveland Cavaliers",
@@ -17,7 +17,7 @@
     "MIA": "Miami Heat",
     "MIL": "Milwaukee Bucks",
     "MIN": "Minnesota Timberwolves",
-    "NOP": "New Orleans Pelicans",
+    "NOH": "New Orleans Pelicans",
     "NYK": "New York Knicks",
     "OKC": "Oklahoma City Thunder",
     "ORL": "Orlando Magic",
@@ -26,6 +26,7 @@
     "POR": "Portland Trail Blazers",
     "SAC": "Sacramento Kings",
     "SAS": "San Antonio Spurs",
+    "SEA": "Seattle SuperSonics (now Oklahoma City Thunder)",
     "TOR": "Toronto Raptors",
     "UTA": "Utah Jazz",
     "WAS": "Washington Wizards"
